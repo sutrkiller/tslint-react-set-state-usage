@@ -1,0 +1,6 @@
+{
+  "rulesDirectory": "../../../../src/rules",
+  "rules": {
+    "tslint-react-set-state-usage": [true, "updater-only"]
+  }
+}
