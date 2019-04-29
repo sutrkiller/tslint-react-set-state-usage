@@ -1,4 +1,4 @@
-# tsline-react-set-state-usage [![CircleCI](https://circleci.com/gh/sutrkiller/tslint-react-set-state-usage.svg?style=shield&svg)](https://circleci.com/gh/sutrkiller/tslint-react-set-state-usage) [![npm version](https://img.shields.io/npm/v/tslint-react-set-state-usage.svg?style=flat)](https://www.npmjs.com/package/tslint-react-set-state-usage) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+# tslint-react-set-state-usage [![CircleCI](https://circleci.com/gh/sutrkiller/tslint-react-set-state-usage.svg?style=shield&svg)](https://circleci.com/gh/sutrkiller/tslint-react-set-state-usage) [![npm version](https://img.shields.io/npm/v/tslint-react-set-state-usage.svg?style=flat)](https://www.npmjs.com/package/tslint-react-set-state-usage) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
 **tslint-react-set-state-usage** is a rule, that enforces usage of callbacks in setState calls instead of objects. Moreover, it forbids access to `this.props` and `this.state` within `setState(...)` calls.
 
