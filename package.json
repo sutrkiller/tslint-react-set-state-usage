@@ -1,33 +1,33 @@
 {
-    "name": "tslint-react-set-state-usage",
-    "version": "2.0.2",
-    "description": "TSLint rule for detection of React setState usage issues",
-    "main": "tslint.json",
-    "scripts": {
-        "build": "./node_modules/.bin/tsc -p .",
-        "test": "npm run build && \"./node_modules/.bin/tslint\" --test ./test/rules/**/tslint.json"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/sutrkiller/tslint-react-set-state-usage.git"
-    },
-    "keywords": [
-        "setState",
-        "tslint",
-        "rule"
-    ],
-    "author": "Tobias Kamenicky",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/sutrkiller/tslint-react-set-state-usage/issues"
-    },
-    "homepage": "https://github.com/sutrkiller/tslint-react-set-state-usage#readme",
-    "dependencies": {
-        "tsutils": "^2.4.0"
-    },
-    "devDependencies": {
-        "@types/node": "^8.0.3",
-        "tslint": "^5.4.3",
-        "typescript": "2.3.4"
-    }
+  "name": "tslint-react-set-state-usage",
+  "version": "2.0.2",
+  "description": "TSLint rule for detection of React setState usage issues",
+  "main": "tslint.json",
+  "scripts": {
+    "build": "./node_modules/.bin/tsc -p .",
+    "test": "npm run build && \"./node_modules/.bin/tslint\" --test ./test/rules/**/tslint.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sutrkiller/tslint-react-set-state-usage.git"
+  },
+  "keywords": [
+    "setState",
+    "tslint",
+    "rule"
+  ],
+  "author": "Tobias Kamenicky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sutrkiller/tslint-react-set-state-usage/issues"
+  },
+  "homepage": "https://github.com/sutrkiller/tslint-react-set-state-usage#readme",
+  "dependencies": {
+    "tsutils": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.3",
+    "tslint": "^5.4.3",
+    "typescript": "2.3.4"
+  }
 }
