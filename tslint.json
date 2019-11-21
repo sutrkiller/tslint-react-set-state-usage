@@ -1,13 +1,10 @@
 {
-  "defaultSeverity": "error",
-  "jsRules": {},
-  "rules": {
-    "tslint-react-set-state-usage": [
-      true,
-      "allow-object"
+    "defaultSeverity": "error",
+    "jsRules": {},
+    "rules": {
+        "tslint-react-set-state-usage": true
+    },
+    "rulesDirectory": [
+        "src/rules"
     ]
-  },
-  "rulesDirectory": [
-    "src/rules"
-  ]
 }
