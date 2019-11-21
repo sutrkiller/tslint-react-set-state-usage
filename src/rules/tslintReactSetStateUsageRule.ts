@@ -5,6 +5,7 @@ import { isObjectLiteralExpression } from "tsutils";
 import {
     IOptions,
     OPTION_UPDATER_ONLY,
+    OPTION_ALLOW_OBJECT,
     parseOptions,
 } from "./tslintReactSetStateUsageOptions";
 import {
@@ -25,7 +26,7 @@ export class Rule extends Lint.Rules.AbstractRule {
         options: {
             items: [
                 {
-                    enum: [OPTION_UPDATER_ONLY],
+                    enum: [OPTION_UPDATER_ONLY, OPTION_ALLOW_OBJECT],
                     type: "string",
                 },
             ],
@@ -46,11 +47,11 @@ export class Rule extends Lint.Rules.AbstractRule {
 }
 
 function walk(ctx: Lint.WalkContext<IOptions>) {
-    const { sourceFile, options: { updaterOnly } } = ctx;
+    const { sourceFile, options: { updaterOnly, allowObject } } = ctx;
 
     function cb(node: ts.Node): void {
         if (isThisSetState(node)) {
-            inspectSetStateCall(node, ctx, updaterOnly);
+            inspectSetStateCall(node, ctx, updaterOnly, allowObject);
         }
         else if (isThisState(node) || isThisProps(node)) {
             inspectThisPropsOrStateContext(node, ctx);
@@ -62,12 +63,12 @@ function walk(ctx: Lint.WalkContext<IOptions>) {
     return ts.forEachChild(sourceFile, cb);
 }
 
-function inspectSetStateCall(node: ts.CallExpression, ctx: Lint.WalkContext<IOptions>, updaterOnly: boolean) {
+function inspectSetStateCall(node: ts.CallExpression, ctx: Lint.WalkContext<IOptions>, updaterOnly: boolean, allowObject: boolean) {
     const { 0: updaterArgument, 1: callbackArgument, length: argumentsCount } = node.arguments;
 
     // Forbid object literal
     const bareUpdaterArgument = removeParentheses(updaterArgument);
-    if (isObjectLiteralExpression(bareUpdaterArgument)) {
+    if (!allowObject && isObjectLiteralExpression(bareUpdaterArgument)) {
         ctx.addFailureAtNode(updaterArgument, FAILURE_STRING);
     }
 

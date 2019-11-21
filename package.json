@@ -1,11 +1,11 @@
 {
   "name": "tslint-react-set-state-usage",
-  "version": "2.0.2",
-  "description": "TSLint rule for detection non-functional setState statements",
+  "version": "2.0.3",
+  "description": "TSLint rule for detection of React setState usage issues",
   "main": "tslint.json",
   "scripts": {
     "build": "./node_modules/.bin/tsc -p .",
-    "test": "npm run build && \"./node_modules/.bin/tslint\" --test test/rules/**/tslint.json"
+    "test": "npm run build && \"./node_modules/.bin/tslint\" --test ./test/rules/**/tslint.json"
   },
   "repository": {
     "type": "git",

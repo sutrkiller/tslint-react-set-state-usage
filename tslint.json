@@ -3,7 +3,7 @@
   "jsRules": {},
   "rules": {
     "tslint-react-set-state-usage": true
-      },
+  },
   "rulesDirectory": [
     "src/rules"
   ]

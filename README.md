@@ -3,6 +3,7 @@
 **tslint-react-set-state-usage** is a rule, that enforces usage of callbacks in setState calls instead of objects. Moreover, it forbids access to `this.props` and `this.state` within `setState(...)` calls.
 
 * **updater-only:** it also has updater-only option to forbid usage of second `callback` parameter of setState
+* **allow-object:** it also has allow-object option to allow objects to be passed instead of a callback
 
 ## Installation
 
@@ -31,6 +32,14 @@ To enable the **updater-only** option, rule should be used like this:
 }
 ```
 
+To enable the **allow-object** option, rule should be used like this:
+
+```JSON
+"rules:" {
+  "tslint-react-set-state-usage": [true, "allow-object"]
+}
+```
+
 ## Examples
 
 ```tsx
@@ -53,6 +62,7 @@ class NameDemo extends React.Component<{ someFlag: boolean, someCallback: () => 
   
   function onGoodClick() {
     this.setState(() => ({ name: 'goodName' })); // will not produce tslint error
+    this.setState({ name: 'goodName' }); // with allow-object option enabled, will not produce tslint error
     this.setState((state, props) => ({ redundandFlag: props.flag })); // will not produce tslint error
   }
   
