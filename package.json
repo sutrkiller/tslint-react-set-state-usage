@@ -1,6 +1,6 @@
 {
   "name": "tslint-react-set-state-usage",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "TSLint rule for detection of React setState usage issues",
   "main": "tslint.json",
   "scripts": {
